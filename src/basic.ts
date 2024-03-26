@@ -1,14 +1,15 @@
 console.log('Your code goes here...!! 😱');
 
 // using Types
-function add(n1:number, n2:number) {
+function badd(n1:number, n2:number) {
     return n1 + n2
 }
 
-const number1 = '5';
-const number2 = 2.8;
+// const number11 = '5'; // 에러 확인 string못넣음. 
+const number11 = 5;
+const number21 = 2.8;
 
-const result = add(number1, number2);
+const result = badd(number11, number21);
 console.log(result);
 
 
