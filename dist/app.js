@@ -1,5 +1,6 @@
-var userInput;
-var userName;
+"use strict";
+let userInput;
+let userName;
 userInput = 5;
 userInput = "string max";
 if (typeof userInput === 'string') {
@@ -8,8 +9,8 @@ if (typeof userInput === 'string') {
 function generateError(message, code) {
     throw { message: message, errorCode: code };
 }
-var errorResult = generateError('an error occurred!', 500);
-var button = document.querySelector("button");
+const errorResult = generateError('an error occurred!', 500);
+const button = document.querySelector("button");
 function clickHandler(message) {
     console.log("Clicked!", message);
 }
