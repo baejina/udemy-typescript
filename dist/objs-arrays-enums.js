@@ -1,4 +1,3 @@
-"use strict";
 var Role;
 (function (Role) {
     Role[Role["ADMIN"] = 5] = "ADMIN";
@@ -6,7 +5,7 @@ var Role;
     Role["AUTHOR"] = "AUTHOR";
 })(Role || (Role = {}));
 ;
-const person = {
+var person = {
     name: 'jina',
     age: 40,
     hobbies: ['sports', 'cooking'],
@@ -15,9 +14,10 @@ const person = {
 if (person.role === Role.READ_ONLY) {
     console.log('is READ_ONLY', Role.READ_ONLY);
 }
-let favoriteActivities;
+var favoriteActivities;
 favoriteActivities = ['Sports', 5];
-for (const hobby of person.hobbies) {
+for (var _i = 0, _a = person.hobbies; _i < _a.length; _i++) {
+    var hobby = _a[_i];
     console.log(hobby);
 }
 console.log('favoriteActivities:', favoriteActivities);
