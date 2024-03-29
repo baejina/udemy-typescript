@@ -1,0 +1,19 @@
+
+# 섹션 15 - express & typescript
+ $ npm init -y
+ $ tsc --init 
+    타입스크립트 설정 해줌.
+
+ 
+ 서버 설치
+ $ npm install --save express body-parser
+
+ 개발 종속성 설치
+ ( 실행뿐 아니고 변경사항 있을떄마다 노드 서버 재시작.
+  - 소스코드가 변경될 떄마다 노드 앱 서버 자동으로 다시 시작해서 개발 속도 빨렁
+  )
+ $ npm install --save-dev nodemon
+
+
+
+
