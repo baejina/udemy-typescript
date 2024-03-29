@@ -173,6 +173,7 @@
   },
   "exclude": [
     "./src/analytics.ts",
+    "./example-express",
     // "src/*.dev.ts",
     //"**/*.dev.ts",
     "node_modules" //  exclude 옵션 안쓸꺼면 추가 안해도 된대. // default 이거 기본설정으로 되있데, 
