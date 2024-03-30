@@ -1,0 +1,30 @@
+/* 
+    import xxx from 어쩌구.js <- .js삭제 하세염
+    xx.js라고 안쓰고 xx라고 써도되. 웹팩이 자동으로 .js랑 확장자파일을 찾을테니까
+ */
+// node 환경내에 내보내기 방식임.
+const path = require("path"); // nodejs 코드
+module.exports = {
+  entry: "./src/app.ts",
+  output: {
+    // filename: 'bundle.[contenthash].js' // contenthash를 넣어서 웹팩이 자동으로 빌드마다 고유한 해시를 만들어 캐쉬 도움줄수도 있지.
+    filename: "bundle.js",
+    path: path.resolve(__dirname, "dist"),
+  },
+  devtool: "inline-source-amp", // 웹패게세 추출해야 되는 소스 맵이 생성될것이라 알려줌.
+  // 파일임. module css, 이미지 등 ... 학습 규칙 넣어줌.
+  module: {
+    rules: [
+      {
+        test: /\.ts$/,
+        use: "ts-loader", // 자동으로 tsconfig.json파일을 가져와 활용해
+        exclude: /node_modules/,
+      },
+    ],
+  },
+  resolve: {
+    extensions: [".ts", ".js"], // 이 확장자 파일이 들어간 파일을 번들링해. 파일 구성 거의 끄읏.
+    // 아 참고로 tsconfig.json 에 "sourceMap": true 해놔야햄.
+    // 그래야 코드 디버깅 할때 도움되고 웹페이지 지원이 가능해.
+  },
+};
