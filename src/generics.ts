@@ -1,5 +1,5 @@
 
-// 타입스크립트 제네릭
+// 타입스크립트 제네릭 : https://www.typescriptlang.org/docs/handbook/generics.html
 /*
     다른 타입에 연결된 타입 다른타입이 무엇인지 명시해.
 */
@@ -121,6 +121,7 @@ const numberStorage = new DataStorage<number> ();
 
     1) Partial 타입 -> 파셜타입이 우리가 만든 타입을 감싸면 이 모든 속성이 옵션이 되는 타입으로
                       바꿔 준디.처음엔 빈객체로 두어도, 이 요소들을 차례로 추가 할 수 있엉ㅇ
+                      속성을 옵션을 바꿔주거나, 고정하는 작업 쓸때 유용해.
     2) Readonly 타입                  
 */
 
@@ -143,6 +144,22 @@ function createCourseGoal(title: string, description: string, date: Date
 
 // 더이상 추가 하고 싶지 않을떄 Readonly 타입 활용.
 const names: Readonly<string[]> = ['jina', 'zeeone'];
-// names.push('hoi'); <- 밑줄생겨.
+// names.push('hoi'); <- 밑줄 생겨.
 
 
+
+
+/*
+
+    제네릭 | 유니온 타입 헷갈리냥?
+
+    DataStorage 예를들면 
+    class DataStorage<T extends string | number | boolean > 
+        어떤 유형의 데이터를 저장할건지 선택하고, 같은 타입의 데이터만 추가할 수 있다고 알령.
+        호출할때마다 이 타입중 하나를 활용해 호출하는 함수를 만들꺼라면 유니언타입이 낫지.
+        특정타입만 고수할꺼라면 생성한 클래스 인스턴스 전체에서 같은 타입을 사용할꺼면
+        제네릭타입이 낫징
+
+        메서드 호출때마다 다른 타입을 사용하는 유연성을 갖고 싶다? -> 유니언
+        제네릭 타입은 한 타입에 고정됨.
+*/
